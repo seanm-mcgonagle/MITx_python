@@ -8,7 +8,7 @@ def credit_balance(balance, annualInterestRate, min_pay_rate, month):
         return balance
     else:
         min_payment = (balance * min_pay_rate)
-        print min_payment
+        print(min_payment)
         unpaid_balance = balance - min_payment
         interest = (annualInterestRate/12.0)*(unpaid_balance)
         new_balance = unpaid_balance + interest
@@ -36,8 +36,8 @@ def fixed_payment_calc(balance, annualInterestRate, min_payment, month):
         return fixed_payment_calc(new_balance, annualInterestRate, min_payment, month)
 
 
-print fixed_payment_calc(5000, 0.18, 451.626022, 12)
-print fixed_payment_calc(5000, 0.18, 0, 12)
+print(fixed_payment_calc(5000, 0.18, 451.626022, 12))
+print(fixed_payment_calc(5000, 0.18, 0, 12))
 
 def min_payment_calculator(balance, annualInterestRate, min_payment, month):
     '''
@@ -49,7 +49,7 @@ def min_payment_calculator(balance, annualInterestRate, min_payment, month):
     
     return min_payment
 
-print min_payment_calculator(5000, 0.18, 100, 12)
+print(min_payment_calculator(5000, 0.18, 100, 12))
 
 def min_payment_calc_bisection(balance, annualInterestRate):
     '''
@@ -74,7 +74,7 @@ def min_payment_calc_bisection(balance, annualInterestRate):
 
     return guess
 
-print min_payment_calc_bisection(5000, 0.18) 
+print(min_payment_calc_bisection(5000, 0.18))
 
 
 

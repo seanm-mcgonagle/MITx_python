@@ -8,7 +8,7 @@ num_guesses = 0
 
 while abs(guess**3 - cube) >= epsilon:
     guess += increment
-    num_guess += 1
+    num_guesses += 1
 
 print ('num_guesses =', num_guesses)
 
