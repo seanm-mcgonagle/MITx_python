@@ -23,6 +23,18 @@ def iterPower(base, exp):
 print(iterPower(6, 6))
 
 
+def iterPower_v2(base, exp):
+    answer = 1
+    while exp > 0:
+
+        answer = answer * base
+        exp -= 1
+    return answer
+
+
+print(iterPower_v2(6, 6))
+
+
 def recurPower(base, exp):
     if exp == 0:
         return 1
