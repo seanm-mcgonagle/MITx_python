@@ -17,4 +17,4 @@ def isPalendrome(text):
     return isPal(stripper(text))
 
 
-print(isPalendrome('heck Yes'))
+print(isPalendrome('racecar'))
