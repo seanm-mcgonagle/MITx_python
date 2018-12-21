@@ -63,16 +63,16 @@ def bisection_min_payment_calc(balance, annualInterestRate):
     payment = (upper_bound + lower_bound) / 2.0
     print(payment)
 
-    while abs(payment_calc(balance, annualInterestRate, payment)) > 1:
+    while abs(payment_calc(balance, annualInterestRate, payment)) > 0.01:
 
         if payment_calc(balance, annualInterestRate, payment) > 0:
-            payment = (payment + upper_bound) / 2.0
             lower_bound = payment
+            payment = (payment + upper_bound) / 2.0
 
             print(payment)
         elif payment_calc(balance, annualInterestRate, payment) < 0:
-            payment = (payment + lower_bound) / 2.0
             upper_bound = payment
+            payment = (payment + lower_bound) / 2.0
 
             print(payment)
     return payment
