@@ -27,4 +27,5 @@ def oddTuples(aTuple):
 
 
 tupps = ('I', 'am', 'a', 'test', 'tuple',)
-print(oddTuples(tupps))
+# print(oddTuples(tupps))
+print(oddTuples(('i', 'am', 'a', 'test', 'tuple',)))
