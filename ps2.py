@@ -71,4 +71,4 @@ def bisection_min_payment_calc(balance, annualInterestRate):
     return payment
 
 
-print(bisection_min_payment_calc(5000, 0.18))
+#print(bisection_min_payment_calc(5000, 0.18))
