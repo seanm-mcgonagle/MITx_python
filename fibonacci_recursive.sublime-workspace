@@ -1,0 +1,315 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"len",
+				"length_dict"
+			],
+			[
+				"abs",
+				"abs_val"
+			],
+			[
+				"od",
+				"oddTuples"
+			],
+			[
+				"max",
+				"max_nums"
+			],
+			[
+				"min",
+				"min_payment_calc"
+			],
+			[
+				"pay",
+				"payment"
+			],
+			[
+				"month",
+				"monthlyPaymentRate"
+			],
+			[
+				"min_",
+				"min_payment_calc"
+			],
+			[
+				"unp",
+				"unpaid_balance"
+			],
+			[
+				"gue",
+				"guess_monthy_payment"
+			],
+			[
+				"in",
+				"insterest"
+			],
+			[
+				"un",
+				"unpaid_balance"
+			],
+			[
+				"is",
+				"isPalendrome"
+			],
+			[
+				"gcd",
+				"gcdRecur"
+			],
+			[
+				"gc",
+				"gcdIter"
+			],
+			[
+				"senso",
+				"sensor_ratio"
+			],
+			[
+				"ef",
+				"effective_sensors"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dec",
+				"URL Decode"
+			],
+			[
+				"decode",
+				"URL Decode"
+			],
+			[
+				"de",
+				"URL Decode"
+			],
+			[
+				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"url",
+				"URL Decode"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/smcgonagle/MITx/MITx_python/lyrics_count_dict.py",
+		"/Users/smcgonagle/MITx/MITx_python/README.md",
+		"/Users/smcgonagle/Documents/damn_bashrc",
+		"/Users/smcgonagle/Downloads/cbsyslog-client.cer",
+		"/Users/smcgonagle/Documents/shutdown.txt",
+		"/Users/smcgonagle/Documents/shutdowns.txt",
+		"/Users/smcgonagle/Documents/ingress_filter.sh",
+		"/Users/smcgonagle/git/salt-formulas/salt/_runners/service/forge/main.py",
+		"/Users/smcgonagle/Documents/alliance_access.txt",
+		"/Users/smcgonagle/Documents/temp.stuff",
+		"/Users/smcgonagle/Documents/CbRC_notes",
+		"/Users/smcgonagle/MITx/MITx_python/apply_to_each_ex.py",
+		"/Users/smcgonagle/Documents/pink_swan_watchlists.txt",
+		"/Users/smcgonagle/MITx/MITx_python/problem_set2.py",
+		"/Users/smcgonagle/MITx/MITx_python/is_pal.py",
+		"/Users/smcgonagle/MITx/MITx_python/aTuple.py",
+		"/Users/smcgonagle/MITx/MITx_python/apply_to_each.py",
+		"/Users/smcgonagle/MITx/MITx_python/effective_sensors.py",
+		"/Users/smcgonagle/MITx/MITx_python/recursive_mult.py",
+		"/Users/smcgonagle/MITx/MITx_python/power_iter_recur.py",
+		"/Users/smcgonagle/MITx/MITx_python/towers_of_hanoi.py",
+		"/Users/smcgonagle/MITx/MITx_python/gcdIter_test.py",
+		"/Users/smcgonagle/MITx/MITx_python/ps2.py",
+		"/Users/smcgonagle/Downloads/ll.txt",
+		"/Users/smcgonagle/MITx/MITx_python/guess_my_number.py",
+		"/Users/smcgonagle/MITx/MITx_python/garbage_notes.py",
+		"/Users/smcgonagle/MITx/MITx_python/quick_test.py",
+		"/Users/smcgonagle/MITx/MITx_python/file_in_out.py",
+		"/Users/smcgonagle/MITx/MITx_python/circle.py",
+		"/Users/smcgonagle/MITx/MITx_python/is_in.py",
+		"/Users/smcgonagle/MITx/MITx_python/gcd.py",
+		"/Users/smcgonagle/MITx/MITx_python/is_even_function.py",
+		"/Users/smcgonagle/MITx/MITx_python/square_root_bisection.py",
+		"/Users/smcgonagle/MITx/MITx_python/cube_root.py",
+		"/Users/smcgonagle/MITx/MITx_python/ps1_1.py",
+		"/Users/smcgonagle/Downloads/jill.py",
+		"/Users/smcgonagle/Documents/instance_list.txt",
+		"/Users/smcgonagle/MITx/MITx_python/vara_varb.py",
+		"/Users/smcgonagle/MITx/MITx_python/stupid_exercise.py",
+		"/Users/smcgonagle/Documents/leading_wildcard_api.txt",
+		"/Users/smcgonagle/Downloads/draft.md",
+		"/Users/smcgonagle/Downloads/lptrace.py",
+		"/Users/smcgonagle/Documents/proc_path_full.xml"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/python3.5.sublime-build",
+	"project": "fibonacci_recursive.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/CbRC_notes"
+			],
+			[
+				"a. schindle*",
+				"a. schindle*"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 184.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
