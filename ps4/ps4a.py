@@ -17,10 +17,11 @@ SCRABBLE_LETTER_VALUES = {
 
 WORDLIST_FILENAME = "words.txt"
 
+
 def loadWords():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
-    
+
     Depending on the size of the word list, this function may
     take a while to finish.
     """
@@ -34,6 +35,7 @@ def loadWords():
     print("  ", len(wordList), "words loaded.")
     return wordList
 
+
 def getFrequencyDict(sequence):
     """
     Returns a dictionary where the keys are elements of the sequence
@@ -46,9 +48,9 @@ def getFrequencyDict(sequence):
     # freqs: dictionary (element_type -> int)
     freq = {}
     for x in sequence:
-        freq[x] = freq.get(x,0) + 1
+        freq[x] = freq.get(x, 0) + 1
     return freq
-	
+
 
 # (end of helper code)
 # -----------------------------------
@@ -68,11 +70,23 @@ def getWordScore(word, n):
     worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
 
     word: string (lowercase letters)
+
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    # TO DO ... <-- Remove this comment when you code this function
 
+    # sum of points for just letters
+    sum = 0
+    for letter in word:
+        if letter in SCRABBLE_LETTER_VALUES:
+            sum = sum + SCRABBLE_LETTER_VALUES[letter]
+    # multiplied by length of word
+    sum = sum * len(word)
+
+    # addition of bonus points if all n letters are used on the first turn
+    if len(word) == n:
+        sum = sum + 50
+    return sum
 
 
 #
@@ -92,12 +106,14 @@ def displayHand(hand):
     """
     for letter in hand.keys():
         for j in range(hand[letter]):
-             print(letter,end=" ")       # print all on the same line
+            print(letter, end=" ")       # print all on the same line
     print()                             # print an empty line
 
 #
 # Problem #2: Make sure you understand how this function works and what it does!
 #
+
+
 def dealHand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -110,22 +126,24 @@ def dealHand(n):
     n: int >= 0
     returns: dictionary (string -> int)
     """
-    hand={}
+    hand = {}
     numVowels = n // 3
-    
+
     for i in range(numVowels):
-        x = VOWELS[random.randrange(0,len(VOWELS))]
+        x = VOWELS[random.randrange(0, len(VOWELS))]
         hand[x] = hand.get(x, 0) + 1
-        
-    for i in range(numVowels, n):    
-        x = CONSONANTS[random.randrange(0,len(CONSONANTS))]
+
+    for i in range(numVowels, n):
+        x = CONSONANTS[random.randrange(0, len(CONSONANTS))]
         hand[x] = hand.get(x, 0) + 1
-        
+
     return hand
 
 #
 # Problem #2: Update a hand by removing letters
 #
+
+
 def updateHand(hand, word):
     """
     Assumes that 'hand' has all the letters in word.
@@ -142,8 +160,13 @@ def updateHand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    copy_hand = hand.copy()
+    for letter in word:
+        copy_hand[letter] -= 1  # we could also do copy_hand.get(letter,0).
+        # if copy_hand[letter] <= 0:
+        #   del copy_hand[letter]
 
+    return copy_hand
 
 
 #
@@ -155,12 +178,33 @@ def isValidWord(word, hand, wordList):
     composed of letters in the hand. Otherwise, returns False.
 
     Does not mutate hand or wordList.
-   
+
     word: string
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-    # TO DO ... <-- Remove this comment when you code this function
+
+    # is the word legit
+    is_word = True
+
+    if word not in wordList:
+        is_word = False
+
+    # is the word comprised of characters from hand?
+    is_from_hand = bool
+    copy_hand = hand.copy()
+
+    for letter in word:
+        try:
+            copy_hand[letter] -= 1
+        except KeyError:
+            is_from_hand = False
+            break
+
+        if copy_hand[letter] < 0:
+            is_from_hand = False
+            break
+    return is_from_hand and is_word
 
 
 #
@@ -170,12 +214,17 @@ def isValidWord(word, hand, wordList):
 def calculateHandlen(hand):
     """ 
     Returns the length (number of letters) in the current hand.
-    
+
     hand: dictionary (string-> int)
     returns: integer
     """
-    # TO DO... <-- Remove this comment when you code this function
+    length = 0
+    hand_values = hand.values()
 
+    for value in hand_values:
+        length = length + value
+
+    return length
 
 
 def playHand(hand, wordList, n):
@@ -198,41 +247,51 @@ def playHand(hand, wordList, n):
       hand: dictionary (string -> int)
       wordList: list of lowercase strings
       n: integer (HAND_SIZE; i.e., hand size required for additional points)
-      
+
     """
     # BEGIN PSEUDOCODE <-- Remove this comment when you code this function; do your coding within the pseudocode (leaving those comments in-place!)
     # Keep track of the total score
-    
+    score = 0
+
     # As long as there are still letters left in the hand:
-    
+    while calculateHandlen(hand) > 0:
         # Display the hand
-        
-        # Ask user for input
-        
-        # If the input is a single period:
-        
+        displayHand(hand)
+    # Ask user for input
+        word = input("please input either a new word, or a single period, inidcating your turn is over\n")
+    # If the input is a single period:
+        if word == '.':
             # End the game (break out of the loop)
+            break
+            print('you ended the game')
 
-            
-        # Otherwise (the input is not a single period):
-        
+    # Otherwise (the input is not a single period):
+        else:
             # If the word is not valid:
-            
+            if not isValidWord(word, hand, wordList):
                 # Reject invalid word (print a message followed by a blank line)
-
-            # Otherwise (the word is valid):
-
+                print("this isn't a valid word")
+    # Otherwise (the word is valid):
+            else:
                 # Tell the user how many points the word earned, and the updated total score, in one line followed by a blank line
-                
-                # Update the hand 
-                
+                score += getWordScore(word, n)
+                print("point earned from word:", getWordScore(word, n))
+                print("total score:", score)
+        # Update the hand
+                hand = updateHand(hand, word)
 
-    # Game is over (user entered a '.' or ran out of letters), so tell user the total score
+    print("here's your hand:", hand)
+    print("your final score is:", score)
+# Game is over (user entered a '.' or ran out of letters), so tell user the total score
 
+# display hand
+
+# input a word from user, and check that it's valid
 
 #
 # Problem #5: Playing a game
-# 
+#
+
 
 def playGame(wordList):
     """
@@ -243,13 +302,25 @@ def playGame(wordList):
       * If the user inputs 'r', let the user play the last hand again.
       * If the user inputs 'e', exit the game.
       * If the user inputs anything else, tell them their input was invalid.
- 
+
     2) When done playing the hand, repeat from step 1    
     """
-    # TO DO ... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this line when you code the function
-   
+    while True:
+        user_input = input("Please enter one of the following letters into the console: 'n' or 'r' or 'e'. 'n' will start a new hand. 'r' will replay your last hand. 'e' will exit the game.\n")
 
+        if user_input == 'e':
+            break
+            # if user wants to play new game
+        elif user_input == 'n':
+            # create new hand
+            hand = dealHand(HAND_SIZE)
+            # now play a hand
+            playHand(hand, wordList, HAND_SIZE)
+        elif user_input == 'r':
+            try:
+                playHand(hand, wordList, HAND_SIZE)
+            except UnboundLocalError:
+                print("you haven't played a hand yet, so you can't replay your last hand... TRY AGAIN, ASSHOLE\n")
 
 
 #
